@@ -1,0 +1,30 @@
+# Maven build outputs
+**/target/
+**/reports/
+**/allure-results/
+**/allure-report/
+
+# Logs
+*.log
+
+# IDE-specific junk (Eclipse, IntelliJ, VS Code)
+.classpath
+.project
+.settings/
+.idea/
+.vscode/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.iml
+*.swp
+*.bak

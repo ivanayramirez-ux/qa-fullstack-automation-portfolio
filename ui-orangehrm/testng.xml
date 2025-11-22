@@ -1,0 +1,26 @@
+
+<suite name="OrangeHRM UI Suite" verbose="1" parallel="false">
+
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+
+   
+    <test name="All UI Tests">
+        <groups>
+            <run>
+                <include name="smoke"/>
+                <include name="pim"/>
+                <include name="leave"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.ivana.orangehrm.tests.OrangeHRMLoginTest"/>
+            <class name="com.ivana.orangehrm.tests.EmployeeManagementTests"/>
+            <class name="com.ivana.orangehrm.tests.LeaveRequestTests"/>
+        </classes>
+
+    </test>
+
+</suite>
