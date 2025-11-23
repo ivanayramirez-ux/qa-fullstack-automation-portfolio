@@ -1,20 +1,14 @@
 package com.ivana.parabank.api;
 
 import io.restassured.RestAssured;
-import io.restassured.filter.log.RequestLoggingFilter;
-import io.restassured.filter.log.ResponseLoggingFilter;
 import org.testng.annotations.BeforeClass;
 
-public class BaseApiTest {
+public abstract class BaseApiTest {
 
-    @BeforeClass
-    public void setupApi() {
+    protected static final String BASE_URI = "http://parabank.parasoft.com/parabank";
 
-        
-        RestAssured.baseURI = "http://parabank.parasoft.com";
-        RestAssured.basePath = "/parabank/services/bank";
-
-        
-        RestAssured.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
+    @BeforeClass(alwaysRun = true)
+    public void configureRestAssured() {
+        RestAssured.baseURI = BASE_URI;
     }
 }

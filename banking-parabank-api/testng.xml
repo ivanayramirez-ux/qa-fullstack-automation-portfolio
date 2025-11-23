@@ -1,5 +1,12 @@
-<suite name="Parabank API Suite">
-    <test name="Parabank API Tests">
+
+<suite name="Parabank API Suite" verbose="1" parallel="false">
+   
+    <test name="Stable API tests">
+        <groups>
+            <run>
+                <include name="stable"/>
+            </run>
+        </groups>
         <classes>
             <class name="com.ivana.parabank.api.AccountsApiTests"/>
             <class name="com.ivana.parabank.api.CustomersApiTests"/>
