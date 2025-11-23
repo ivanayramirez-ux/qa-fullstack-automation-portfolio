@@ -18,28 +18,23 @@
     <description>Shared core utilities (drivers, config, reporting)</description>
 
     <dependencies>
-
-   
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.18.1</version>
         </dependency>
 
-        
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>5.6.3</version>
         </dependency>
 
-   
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.11.0</version>
         </dependency>
-
 
         <dependency>
             <groupId>io.qameta.allure</groupId>
@@ -47,6 +42,12 @@
             <version>2.24.0</version>
         </dependency>
 
+       
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.5.0</version>
+        </dependency>
     </dependencies>
 
 </project>

@@ -1,0 +1,19 @@
+{
+  "validAccounts": [
+    {
+      "id": 12345,
+      "customerId": 12212,
+      "type": "CHECKING"
+    },
+    {
+      "id": 12456,
+      "customerId": 12212,
+      "type": "SAVINGS"
+    }
+  ],
+  "invalidAccounts": [
+    {
+      "id": 99999
+    }
+  ]
+}

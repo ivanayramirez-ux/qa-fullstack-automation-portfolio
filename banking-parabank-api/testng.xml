@@ -1,0 +1,9 @@
+<suite name="Parabank API Suite">
+    <test name="Parabank API Tests">
+        <classes>
+            <class name="com.ivana.parabank.api.AccountsApiTests"/>
+            <class name="com.ivana.parabank.api.CustomersApiTests"/>
+            <class name="com.ivana.parabank.api.LoansApiTests"/>
+        </classes>
+    </test>
+</suite>
