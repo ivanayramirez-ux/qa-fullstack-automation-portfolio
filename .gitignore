@@ -40,3 +40,8 @@ Thumbs.db
 **/test-output/
 **/surefire-reports/
 **/junitreports/
+
+# Node / Playwright stuff for accessibility-tests
+accessibility-tests/axe/node_modules/
+accessibility-tests/axe/test-results/
+accessibility-tests/axe/playwright-report/

@@ -55,6 +55,6 @@
         <module>banking-parabank-api</module>
 	    <module>banking-parabank-ui</module>
 	    <module>performance-tests</module>
-    </modules>
+	   </modules>
 
 </project>
