@@ -53,7 +53,8 @@
         <module>core</module>
         <module>ui-orangehrm</module>
         <module>banking-parabank-api</module>
-        
+
+        <module>banking-parabank-ui</module>
     </modules>
 
 </project>

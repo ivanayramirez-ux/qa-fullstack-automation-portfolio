@@ -1,0 +1,10 @@
+
+<suite name="Parabank UI Suite" verbose="1" parallel="false">
+
+    <test name="Parabank UI Tests">
+        <packages>
+            <package name="com.ivana.parabank.tests"/>
+        </packages>
+    </test>
+
+</suite>

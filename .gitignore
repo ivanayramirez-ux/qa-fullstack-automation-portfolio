@@ -28,3 +28,9 @@ Thumbs.db
 *.iml
 *.swp
 *.bak
+
+# Test outputs (TestNG, Surefire, HTML reports)
+**/test-output/
+**/surefire-reports/
+**/junitreports/
+
