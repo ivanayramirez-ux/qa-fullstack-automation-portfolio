@@ -9,6 +9,8 @@ Multi-module Maven project showcasing my QA automation skills across UI testing,
 <ul>
   <li><strong>core</strong> – shared utilities (config, drivers, waits, reporting + Allure listener)</li>
   <li><strong>ui-orangehrm</strong> – Selenium + TestNG UI automation for the OrangeHRM demo site</li>
+  <li><strong>banking-parabank-api</strong> – API automation for Parabank (accounts, customers, loans)</li>
+  <li><strong>banking-parabank-ui</strong> – Selenium UI automation for Parabank (login, open account, transfer, loans)</li>
 </ul>
 
 <p>More modules (API, performance, accessibility) will be added later.</p>
@@ -29,19 +31,30 @@ qa-fullstack-automation-portfolio/
 │       ├── utils/                  # Wait utilities, helpers
 │       └── reporting/              # TestNG + Allure reporting helper
 │
-└── ui-orangehrm/                   # Selenium UI tests for OrangeHRM
+├── ui-orangehrm/                   # Selenium UI tests for OrangeHRM
+│   ├── pom.xml
+│   ├── testng.xml                  # TestNG suite (smoke, pim, leave groups)
+│   ├── config/
+│   │   ├── config-local.properties
+│   │   ├── config-dev.properties
+│   │   └── config-stage.properties
+│   ├── src/
+│   │   ├── main/java/com/ivana/orangehrm/pages/
+│   │   └── test/java/com/ivana/orangehrm/tests/
+│   ├── reports/                    
+│   ├── allure-results/             
+│   └── allure-report/              
+│
+├── banking-parabank-api/           # API tests for Parabank
+│   ├── pom.xml
+│   └── src/test/java/com/ivana/parabank/api/
+│
+└── banking-parabank-ui/            # Selenium UI tests for Parabank
     ├── pom.xml
-    ├── testng.xml                  # TestNG suite (smoke, pim, leave groups)
-    ├── config/
-    │   ├── config-local.properties
-    │   ├── config-dev.properties
-    │   └── config-stage.properties
-    ├── src/
-    │   ├── main/java/com/ivana/orangehrm/pages/
-    │   └── test/java/com/ivana/orangehrm/tests/
-    ├── reports/                    
-    ├── allure-results/             
-    └── allure-report/              
+    ├── testng.xml
+    └── src/
+        ├── main/java/com/ivana/parabank/pages/
+        └── test/java/com/ivana/parabank/tests/
 </pre>
 
 <hr>
@@ -211,6 +224,73 @@ allure serve ui-orangehrm/allure-results
 
 <hr>
 
+<h1>🏦 Parabank Modules</h1>
+
+<h2>💠 Parabank API Module</h2>
+
+<p><strong>Path: banking-parabank-api/</strong><br>API automation using RestAssured.</p>
+
+<h3>🛠️ Tech Stack</h3>
+<ul>
+  <li>Java</li>
+  <li>RestAssured</li>
+  <li>TestNG</li>
+</ul>
+
+<h3>📌 API Coverage</h3>
+<ul>
+  <li><strong>Accounts API</strong> – retrieve account list, balances, details</li>
+  <li><strong>Customers API</strong> – get customer info</li>
+  <li><strong>Loans API</strong> – request + validate loan responses</li>
+</ul>
+
+<h3>📄 Test Classes</h3>
+<ul>
+  <li><strong>AccountsApiTests</strong></li>
+  <li><strong>CustomersApiTests</strong></li>
+  <li><strong>LoansApiTests</strong></li>
+</ul>
+
+<hr>
+
+<h2>🖥️ Parabank UI Module</h2>
+
+<p><strong>Path: banking-parabank-ui/</strong><br>Full UI automation suite for Parabank banking flows.</p>
+
+<h3>🛠️ Tech Stack</h3>
+<ul>
+  <li>Java</li>
+  <li>Selenium WebDriver</li>
+  <li>TestNG</li>
+  <li>Maven</li>
+</ul>
+
+<h3>📄 Page Objects</h3>
+<ul>
+  <li><strong>LoginPage</strong></li>
+  <li><strong>AccountsOverviewPage</strong></li>
+  <li><strong>OpenAccountPage</strong></li>
+  <li><strong>TransferFundsPage</strong></li>
+  <li><strong>RequestLoanPage</strong></li>
+</ul>
+
+<h3>🧪 Test Coverage</h3>
+<ul>
+  <li><strong>LoginTests</strong> – user authentication</li>
+  <li><strong>OpenAccountsTest</strong> – open savings/checking dynamically</li>
+  <li><strong>TransferFundsTest</strong> – validate internal transfers</li>
+  <li><strong>RequestLoanTests</strong> – loan workflow</li>
+</ul>
+
+<h3>🔧 Stability Engineering</h3>
+<ul>
+  <li>Dynamic dropdown handling with custom waits</li>
+  <li>Full retry logic on dropdown load</li>
+  <li>BaseParabankUITest shared for config + setup</li>
+</ul>
+
+<hr>
+
 <h2>▶️ Running Tests</h2>
 
 <h3>1. Run Everything</h3>
@@ -230,6 +310,20 @@ mvn test
 <h3>3. IDE (TestNG)</h3>
 
 <p>Right-click <strong>testng.xml</strong> → Run.</p>
+
+<h3>4. Run Only Parabank API Tests</h3>
+
+<pre>
+cd banking-parabank-api
+mvn test
+</pre>
+
+<h3>5. Run Only Parabank UI Tests</h3>
+
+<pre>
+cd banking-parabank-ui
+mvn test
+</pre>
 
 <hr>
 
