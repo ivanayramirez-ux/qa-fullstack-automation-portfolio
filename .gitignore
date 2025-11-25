@@ -4,6 +4,13 @@
 **/allure-results/
 **/allure-report/
 
+# JMeter artifacts (add these)
+**/*.jtl
+**/jmeter/tmp/
+**/jmeter/results/
+**/jmeter/bin/
+**/jmeter/logs/
+
 # Logs
 *.log
 
@@ -33,4 +40,3 @@ Thumbs.db
 **/test-output/
 **/surefire-reports/
 **/junitreports/
-
