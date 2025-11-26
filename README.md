@@ -11,6 +11,8 @@ Multi-module Maven project showcasing my QA automation skills across UI testing,
   <li><strong>ui-orangehrm</strong> – Selenium + TestNG UI automation for the OrangeHRM demo site</li>
   <li><strong>banking-parabank-api</strong> – API automation for Parabank (accounts, customers, loans)</li>
   <li><strong>banking-parabank-ui</strong> – Selenium UI automation for Parabank (login, open account, transfer, loans)</li>
+  <li><strong>performance-tests</strong> – JMeter performance testing for Parabank (login + transfer load tests)</li>
+
 </ul>
 
 <p>More modules (API, performance, accessibility) will be added later.</p>
@@ -49,12 +51,21 @@ qa-fullstack-automation-portfolio/
 │   ├── pom.xml
 │   └── src/test/java/com/ivana/parabank/api/
 │
-└── banking-parabank-ui/            # Selenium UI tests for Parabank
+├── banking-parabank-ui/            # Selenium UI tests for Parabank
+│   ├── pom.xml
+│   ├── testng.xml
+│   └── src/
+│       ├── main/java/com/ivana/parabank/pages/
+│       └── test/java/com/ivana/parabank/tests/
+│
+└── performance-tests/              # JMeter performance tests
     ├── pom.xml
-    ├── testng.xml
-    └── src/
-        ├── main/java/com/ivana/parabank/pages/
-        └── test/java/com/ivana/parabank/tests/
+    ├── jmeter/                     # .jmx test plans
+    │   ├── Parabank Login Performance Test.jmx
+    │   └── Parabank Transfer Funds Performance Test.jmx
+    ├── sample-report/              # Sample HTML/JTL output
+    └── users-parabank.csv          # CSV test data (threads/users)
+
 </pre>
 
 <hr>
@@ -291,6 +302,31 @@ allure serve ui-orangehrm/allure-results
 
 <hr>
 
+<h2>⚡ Performance Tests Module</h2>
+
+<p><strong>Path: performance-tests/</strong><br>Performance & load testing for Parabank using JMeter and the JMeter Maven plugin.</p>
+
+<h3>🛠️ Tech Stack</h3>
+<ul>
+  <li>Apache JMeter</li>
+  <li>JMeter Maven Plugin</li>
+  <li>Maven</li>
+</ul>
+
+<h3>📄 Test Plans</h3>
+<ul>
+  <li><strong>Parabank Login Performance Test</strong> – concurrent login load</li>
+  <li><strong>Parabank Transfer Funds Performance Test</strong> – throughput testing</li>
+</ul>
+
+<h3>📊 Outputs</h3>
+<ul>
+  <li>JTL raw results</li>
+  <li>HTML performance report</li>
+</ul>
+
+<hr>
+
 <h2>▶️ Running Tests</h2>
 
 <h3>1. Run Everything</h3>
@@ -307,18 +343,25 @@ cd ui-orangehrm
 mvn test
 </pre>
 
-<h3>3. IDE (TestNG)</h3>
+<h3>3. Running Performance Tests</h3>
+
+<pre>
+cd performance-tests
+mvn clean verify -P performance
+</pre>
+
+<h3>4. IDE (TestNG)</h3>
 
 <p>Right-click <strong>testng.xml</strong> → Run.</p>
 
-<h3>4. Run Only Parabank API Tests</h3>
+<h3>5. Run Only Parabank API Tests</h3>
 
 <pre>
 cd banking-parabank-api
 mvn test
 </pre>
 
-<h3>5. Run Only Parabank UI Tests</h3>
+<h3>6. Run Only Parabank UI Tests</h3>
 
 <pre>
 cd banking-parabank-ui
@@ -366,17 +409,6 @@ mvn test
 <ul>
   <li>Keep: root pom.xml, core/, ui-orangehrm/</li>
   <li>Delete empty src/ or build folders</li>
-</ul>
-
-<hr>
-
-<h2>🛣️ Roadmap</h2>
-
-<ul>
-  <li><strong>API Testing Module</strong> – RestAssured, JSON schema validation</li>
-  <li><strong>Performance Module</strong> – JMeter/BlazeMeter load + stress tests</li>
-  <li><strong>Accessibility</strong> – axe DevTools, basic WCAG/508 checks</li>
-  <li><strong>Cross-browser + Parallel</strong> – Selenium Grid, BrowserStack, Sauce Labs</li>
 </ul>
 
 <p>
