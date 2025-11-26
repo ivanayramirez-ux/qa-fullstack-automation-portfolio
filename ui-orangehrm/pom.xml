@@ -5,7 +5,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- Inherit version + common config from the root pom -->
+    
     <parent>
         <groupId>com.ivana</groupId>
         <artifactId>qa-fullstack-automation-portfolio</artifactId>
