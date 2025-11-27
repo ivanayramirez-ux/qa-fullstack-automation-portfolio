@@ -1,4 +1,4 @@
-<h1>🚀 QA Fullstack Automation Portfolio</h1>
+<h1> QA Fullstack Automation Portfolio</h1>
 
 <p>
 Multi-module Maven project showcasing my QA automation skills across UI testing, shared core utilities, and reporting 
